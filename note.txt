@@ -1,0 +1,35 @@
+CLIENT ID   767ac43db3ea47d19fffb584aa4a0665
+CLIENT SECRET   6a9793bed0d2433b9ddcdd297e718422
+WEBSITE URL http://lans-h.com/
+REDIRECT URI    http://localhost:3000/
+
+--
+
+https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code
+
+https://api.instagram.com/oauth/authorize/?client_id=767ac43db3ea47d19fffb584aa4a0665&redirect_uri=localhost:3000&response_type=code&scope=likes+comments+relationships
+
+--
+code
+1186514e636f4bbe8cc664dbff6ea27f
+
+user id
+30266858
+--
+
+curl -F 'client_id=767ac43db3ea47d19fffb584aa4a0665' \
+    -F 'client_secret=6a9793bed0d2433b9ddcdd297e718422' \
+    -F 'grant_type=authorization_code' \
+    -F 'redirect_uri=http://localhost:3000/' \
+    -F 'code=1186514e636f4bbe8cc664dbff6ea27f' \
+    https://api.instagram.com/oauth/access_token
+
+--
+
+{"access_token":"30266858.767ac43.bdc6ed67d7e441c184fedc3bc5f1a808","user":{"username":"amdslancelot","bio":"\u4eba\u751f\u767e\u614b\u3002#Lessxury#Photography#Music #Hoop#Philosophy#Hacker#Trojan #TPE#TW#LA#SF#CA","website":"http:\/\/www.facebook.com\/lans.hung","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10655134_699953090096651_1308502054_a.jpg","full_name":"Lans","id":"30266858"}}
+
+--
+https://api.instagram.com/v1/users/30266858/?access_token=30266858.767ac43.bdc6ed67d7e441c184fedc3bc5f1a808
+
+
+https://api.instagram.com/v1/users/self/media/liked?access_token=30266858.767ac43.bdc6ed67d7e441c184fedc3bc5f1a808

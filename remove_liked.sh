@@ -7,8 +7,9 @@ python get_liked.py $last_liked_mediaid
 
 while read line
 do
-    echo -e "\nText read from file - $line\n"
+    echo -e "\nRemove liked media, MEDIA ID: $line\n"
     curl -X DELETE https://api.instagram.com/v1/media/$line/likes?access_token=$access_token
+    echo 
     
 done < "./write.txt"
 
