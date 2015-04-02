@@ -1,0 +1,24 @@
+1.
+In Browser:
+
+https://api.instagram.com/oauth/authorize/?client_id=767ac43db3ea47d19fffb584aa4a0665&redirect_uri=http://localhost:3000/&response_type=code&scope=likes+comments+relationships
+
+2.
+Get code in the brower url
+
+3.
+Look up your user id on internet
+
+4.
+In Terminal:
+curl -F 'client_id=767ac43db3ea47d19fffb584aa4a0665' \
+    -F 'client_secret=6a9793bed0d2433b9ddcdd297e718422' \
+    -F 'grant_type=authorization_code' \
+    -F 'redirect_uri=http://localhost:3000/' \
+    -F 'code=<AUTH_CODE>' \
+    https://api.instagram.com/oauth/access_token
+
+5.
+Get access_token in the browser response
+
+
